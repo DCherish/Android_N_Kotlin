@@ -11,5 +11,7 @@
 /gradle.properties
 /gradlew
 /gradlew.bat
-/settins.gradle
+/settings.gradle
+/build.gradle
 /.idea
+/D_content/.idea

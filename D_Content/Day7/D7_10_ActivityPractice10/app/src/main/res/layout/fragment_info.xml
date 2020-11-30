@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    tools:context=".InfoFragment">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:paddingLeft="20dp"
+        android:text="고객정보 입력"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/stroke"
+        android:hint="이름"
+        android:inputType="text"
+        android:paddingLeft="20dp"
+        android:textColor="#Ff000000"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/stroke"
+        android:hint="나이"
+        android:maxLength="3"
+        android:inputType="number"
+        android:paddingLeft="20dp"
+        android:textColor="#Ff000000"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button_date"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/stroke"
+        android:backgroundTint="#FF888888"
+        android:fontFamily="sans-serif"
+        android:gravity="left|center_vertical"
+        android:hint="생년월일"
+        android:paddingLeft="20dp"
+        android:textColor="#FF000000"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:backgroundTint="#FF888888" />
+
+    <Button
+        android:id="@+id/button_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:text="저장"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

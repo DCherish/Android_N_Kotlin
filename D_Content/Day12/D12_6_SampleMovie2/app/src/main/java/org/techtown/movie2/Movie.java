@@ -1,4 +1,4 @@
-package org.techtown.movie;
+package org.techtown.movie2;
 
 public class Movie {
 

@@ -1,4 +1,4 @@
-package org.techtown.movie;
+package org.techtown.movie2;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,7 +20,6 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 
-import java.io.StringReader;
 import java.util.HashMap;
 import java.util.Map;
 

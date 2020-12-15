@@ -1,4 +1,4 @@
-package org.techtown.movie;
+package org.techtown.movie2;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -68,7 +68,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
 
         public void setItem(Movie item)
         {
-            Glide.with(itemView).load(item.imageUrl).into(imageView);
+            Picasso.get().load(item.imageUrl).into(imageView);
             textView.setText(item.movieNm);;
             textView2.setText(item.audiCnt + " 명");
         }

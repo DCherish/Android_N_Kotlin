@@ -56,13 +56,19 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.ViewHolder> {
 
         public void setItem(Book item)
         {
-            imageView.setImageResource(item.getImage());
+            imageView.setImageResource(R.drawable.book);
 
             textView.setText(item.getTitle());
             textView2.setText(item.getWriter());
 
-            String str = item.getContext().substring(7);
+            String str = item.getContext();
+
+            if (str.length() > 20) {
+                str = str.substring(0, 20);
+            }
+
             str = "\" " + str + "... \"";
+
             textView3.setText(str);
         }
     }

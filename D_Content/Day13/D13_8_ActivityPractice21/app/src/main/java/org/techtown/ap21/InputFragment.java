@@ -3,8 +3,10 @@ package org.techtown.ap21;
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,9 +21,14 @@ public class InputFragment extends Fragment {
     EditText editText2;
     EditText editText3;
 
-    String str;
-    String str2;
-    String str3;
+    OnDatabaseCallback callback;
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+
+        callback = (OnDatabaseCallback) getActivity();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,30 +39,38 @@ public class InputFragment extends Fragment {
         editText2 = rootView.findViewById(R.id.editText2);
         editText3 = rootView.findViewById(R.id.editText3);
 
-        str = editText.getText().toString();
-        str2 = editText2.getText().toString();
-        str3 = editText3.getText().toString();
-
         Button button = rootView.findViewById(R.id.buttonOK);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (editText.getText().toString().equals("")) {
+                    Toast.makeText(getActivity(), "저장 실패 :(\n제목을 입력해주세요 :/", Toast.LENGTH_SHORT).show();
+                } else {
+                    if (editText2.getText().toString().equals("")) {
+                        Toast.makeText(getActivity(), "저장 실패 :(\n저자를 입력해주세요 :/", Toast.LENGTH_SHORT).show();
+                    } else {
+                        if (editText3.getText().toString().equals("")) {
+                            Toast.makeText(getActivity(), "저장 실패 :(\n내용을 입력해주세요 :/", Toast.LENGTH_SHORT).show();
+                        } else {
+                            callback.insert(editText.getText().toString().trim(), editText2.getText().toString().trim(), editText3.getText().toString().trim());
 
-                int num = R.drawable.book;
+                            editText.setText("");
+                            editText2.setText("");
+                            editText3.setText("");
 
-                MainActivity activity = (MainActivity) getActivity();
-                activity.saveBookInformation(num, str, str2, str3);
+                            Toast.makeText(getActivity(), "저장 성공 :)", Toast.LENGTH_SHORT).show();
 
-                editText.setText("");
-                editText2.setText("");
-                editText3.setText("");
+                            try {
+                                InputMethodManager inputMethodManager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                                inputMethodManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
 
-                Toast.makeText(getActivity(), "저장 성공 :)", Toast.LENGTH_SHORT).show();
-
-                InputMethodManager inputMethodManager = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-                inputMethodManager.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
-
-                activity.getCurrentFocus().clearFocus();
+                                getActivity().getCurrentFocus().clearFocus();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                }
             }
         });
 

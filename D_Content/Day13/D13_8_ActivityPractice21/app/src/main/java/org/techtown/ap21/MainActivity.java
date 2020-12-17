@@ -2,14 +2,18 @@ package org.techtown.ap21;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity implements OnDatabaseCallback{
 
     InputFragment inputFragment;
     QueryFragment queryFragment;
@@ -21,6 +25,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // open database
+        if (database != null) {
+            database.close();
+            database = null;
+        }
 
         dbHelper = new DatabaseHelper(this);
         database = dbHelper.getWritableDatabase();
@@ -64,9 +74,49 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void saveBookInformation(int num, String str, String str2, String str3)
-    {
-        database.execSQL("insert into bk_info(i_num, title, writer, context) values "
-                + "(" + num + ", '" + str + "', '" + str2 + "', '" + str3 + "')");
+    @Override
+    protected void onDestroy() {
+        // close database
+        if (database != null) {
+            database.close();
+            database = null;
+        }
+
+        super.onDestroy();
+    }
+
+    @Override
+    public void insert(String title, String writer, String context) {
+        database.execSQL("insert into bk_info(title, writer, context) values ('"
+                + title + "', '" + writer + "', '" + context + "')");
+    }
+
+    @Override
+    public ArrayList<Book> accessAll() {
+        ArrayList<Book> result = new ArrayList<Book>();
+
+        try{
+            Cursor cursor = database.rawQuery("select _id, title, writer, context from bk_info", null);
+
+            for (int i = 0; i < cursor.getCount(); i++)
+            {
+                cursor.moveToNext();
+
+                String title = cursor.getString(1);
+                String writer = cursor.getString(2);
+                String context = cursor.getString(3);
+
+                Book book = new Book(title, writer, context);
+
+                result.add(book);
+            }
+
+            cursor.close();
+        } catch (Exception e)
+        {
+            Log.d("DDDDDDDDDD", e.toString());
+        }
+
+        return result;
     }
 }

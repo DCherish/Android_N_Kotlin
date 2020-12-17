@@ -1,26 +1,14 @@
 package org.techtown.ap21;
 
 public class Book {
-    int image;
-
     String title;
     String writer;
     String context;
 
-    public Book(int image, String title, String writer, String context) {
-        this.image = image;
-
+    public Book(String title, String writer, String context) {
         this.title = title;
         this.writer = writer;
         this.context = context;
-    }
-
-    public int getImage() {
-        return image;
-    }
-
-    public void setImage(int image) {
-        this.image = image;
     }
 
     public String getTitle() {

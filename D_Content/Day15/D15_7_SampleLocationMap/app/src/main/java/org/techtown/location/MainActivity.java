@@ -102,16 +102,20 @@ public class MainActivity extends AppCompatActivity implements AutoPermissionsLi
             showCurrentLocation(latitude, longitude);
         }
 
-        public void onProviderDisabled(String provider) { }
+        public void onProviderDisabled(String provider) {
+        }
 
-        public void onProviderEnabled(String provider) { }
+        public void onProviderEnabled(String provider) {
+        }
 
-        public void onStatusChanged(String provider, int status, Bundle extras) { }
+        public void onStatusChanged(String provider, int status, Bundle extras) {
+        }
     }
 
     private void showCurrentLocation(Double latitude, Double longitude) {
         LatLng curPoint = new LatLng(latitude, longitude);
-        map.animateCamera(CameraUpdateFactory.newLatLngZoom(curPoint, 15));
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(curPoint, 15)); // smooth 하게
+        //map.moveCamera(CameraUpdateFactory.newLatLngZoom(curPoint, 15)); // 바로 새로고침
 
         showMyLocationMarker(curPoint);
     }
@@ -124,6 +128,7 @@ public class MainActivity extends AppCompatActivity implements AutoPermissionsLi
             myLocationMarker.snippet("● GPS로 확인한 위치");
             myLocationMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.mylocation));
             map.addMarker(myLocationMarker);
+
         } else {
             myLocationMarker.position(curPoint);
         }

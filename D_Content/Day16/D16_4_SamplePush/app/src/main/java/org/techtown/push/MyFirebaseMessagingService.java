@@ -32,16 +32,16 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         String contents = data.get("contents");
         Log.d(TAG, "from : " + from + ", contents : " + contents);
 
-        sendToActivity(getApplicationContext(), from, contents);
+        sendToActivity(from, contents);
     }
 
-    private void sendToActivity(Context context, String from, String contents) {
-        Intent intent = new Intent(context, MainActivity.class);
+    private void sendToActivity(String from, String contents) {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         intent.putExtra("from", from);
         intent.putExtra("contents", contents);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
-        context.startActivity(intent);
+        getApplicationContext().startActivity(intent);
     }
 
 }

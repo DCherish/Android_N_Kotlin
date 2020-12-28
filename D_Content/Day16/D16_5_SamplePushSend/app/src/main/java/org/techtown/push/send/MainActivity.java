@@ -69,70 +69,49 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        sendData(requestData, new SendResponseListener() {
 
-            @Override
-            public void onRequestCompleted() {
-                println("onRequestCompleted() 호출됨.");
-            }
-
-            @Override
-            public void onRequestStarted() {
-                println("onRequestStarted() 호출됨.");
-            }
-
-            @Override
-            public void onRequestWithError(VolleyError error) {
-                println("onRequestWithError() 호출됨.");
-            }
-        });
-    }
-
-
-    public interface SendResponseListener {
-        public void onRequestStarted();
-        public void onRequestCompleted();
-        public void onRequestWithError(VolleyError error);
-    }
-
-    public void sendData(JSONObject requestData, final SendResponseListener listener) {
         JsonObjectRequest request = new JsonObjectRequest(
+                Request.Method.POST,
+                "https://fcm.googleapis.com/fcm/send",
+                requestData,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
 
-                Request.Method.POST, "https://fcm.googleapis.com/fcm/send", requestData, new Response.Listener<JSONObject>() {
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                }
+        ) {
             @Override
-            public void onResponse(JSONObject response) {
-                listener.onRequestCompleted();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                listener.onRequestWithError(error);
-            }
-        }) {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
-                return params;
+            public String getBodyContentType() {
+                return "application/json";
             }
 
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> headers = new HashMap<String, String>();
-                headers.put("Authorization", "key=AAAAgP01tO8:APA91bG-LZuYlidaB8cpCpog0y47idO8NvbNha1rGrjHPDcoLIiK_hmI1xBAcicDTItrLZ6-qHR9pzDej8XBfZCSwCpDZVo2t6b2J0hOSxp9AUaTrsgsC6nf690R-kTDJFQSTum4bCn5");
+                headers.put("Authorization",
+                        "key=AAAAxRJL6vo:APA91bFHU5VLSZEIQaLrzHBeS-gYowzHHF-0TLUDqS9_arJUhC3nmWw_WaoHq_HGbB9AbX6cZSOqLjMy2r3V7Ge_h0ezxPyBrnnW6Xbg2ezh_pUq6M9XbW0HCn5iOXxJ-OTp56iSOCXc");
+
                 return headers;
             }
 
             @Override
-            public String getBodyContentType() {
-                return "application/json";
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                return params;
             }
         };
 
         request.setShouldCache(false);
-        listener.onRequestStarted();
         requestQueue.add(request);
+        println("요청 보냄");
     }
-
 
     public void println(String data) {
         textView.append(data + "\n");

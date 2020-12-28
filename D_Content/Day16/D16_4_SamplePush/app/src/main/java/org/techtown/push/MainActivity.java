@@ -43,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
                 println("확인된 인스턴스 id : " + instanceId);
             }
         });
+
+        Intent intent = getIntent();
+        processIntent(intent);
     }
 
     public void println(String data) {

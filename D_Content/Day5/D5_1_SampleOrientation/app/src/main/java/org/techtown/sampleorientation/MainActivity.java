@@ -68,19 +68,19 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        //showToast("onStart 호출됨.");
+        showToast("onStart 호출됨.");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        //showToast("onStop 호출됨.");
+        showToast("onStop 호출됨.");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        //showToast("onDestroy 호출됨.");
+        showToast("onDestroy 호출됨.");
     }
 
     @Override

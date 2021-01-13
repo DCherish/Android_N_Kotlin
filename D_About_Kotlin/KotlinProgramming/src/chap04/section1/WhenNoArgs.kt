@@ -7,8 +7,8 @@ fun main() {
 
     when {
         score >= 90.0 -> grade = 'A'
-        score in 80.0 ..89.9-> grade = 'B'
-        score in 70.0 ..79.9-> grade = 'C'
+        score in 80.0 ..89.9 -> grade = 'B'
+        score in 70.0 ..79.9 -> grade = 'C'
         score < 70.0 -> grade = 'F'
     }
 }

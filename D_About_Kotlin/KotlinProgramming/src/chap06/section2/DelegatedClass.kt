@@ -21,7 +21,9 @@ class CarModel(val model: String, impl: Car): Car by impl {
 fun main() {
     val myDamas = CarModel("Damas 2010", VanImpl("100마력"))
     val my350z = CarModel("350Z 2008", SportImpl("350마력"))
+    val myAnotherC = CarModel("AnotherC 2007", SportImpl("200마력"))
 
     myDamas.carInfo()
     my350z.carInfo()
+    myAnotherC.carInfo()
 }

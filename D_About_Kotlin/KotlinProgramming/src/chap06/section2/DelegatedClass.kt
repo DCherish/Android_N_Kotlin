@@ -12,18 +12,28 @@ class SportImpl(val power: String): Car {
     override fun go() = "은 경주용에서 사용되며 $power 을 가집니다."
 }
 
+/*class CarModel(val model: String, private val impl: Car): Car {
+    override fun go(): String {
+        return "TEST"
+    }
+
+    fun carInfo() {
+        println("$model ${impl.go()}")
+    }
+}
+// 직접 접근*/
+
 class CarModel(val model: String, impl: Car): Car by impl {
     fun carInfo() {
         println("$model ${go()}")
     }
 }
+// 위임
 
 fun main() {
     val myDamas = CarModel("Damas 2010", VanImpl("100마력"))
     val my350z = CarModel("350Z 2008", SportImpl("350마력"))
-    val myAnotherC = CarModel("AnotherC 2007", SportImpl("200마력"))
 
     myDamas.carInfo()
     my350z.carInfo()
-    myAnotherC.carInfo()
 }

@@ -9,6 +9,7 @@ class LazyTest {
         println("lazy initialized")
         "Kotlin Programming"
     }
+    // 외부에서 접근할 수 없게하도록 private으로 만드는 것을 추천
 
     fun flow() {
         println("not initialized")
@@ -18,6 +19,6 @@ class LazyTest {
 }
 
 fun main() {
-     val test = LazyTest()
+    val test = LazyTest()
     test.flow()
 }

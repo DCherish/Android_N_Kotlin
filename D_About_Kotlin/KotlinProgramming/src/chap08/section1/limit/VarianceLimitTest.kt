@@ -30,5 +30,4 @@ fun main() {
 
 //    val c3: Box<Cat> = Box<Animal>(10) // 공변성, 상하관계 오류 !
 //    val c4: Box<Any> = Box<Int>(10) // 자료형 제한 오류 !
-
 }

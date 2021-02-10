@@ -8,4 +8,10 @@ fun main() {
     list.forEach { print("$it ") }
     println()
     list.forEachIndexed { index, value -> println("index[$index]: $value") }
+
+    val returnedList = list.onEach { print(it) }
+    println()
+    val returnedMap = map.onEach { println("key: ${it.key}, value: ${it.value}") }
+    println("returnedList = $returnedList")
+    println("returnedMap = $returnedMap")
 }

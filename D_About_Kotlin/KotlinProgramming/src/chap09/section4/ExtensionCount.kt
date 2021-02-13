@@ -14,4 +14,12 @@ fun main() {
     val returnedMap = map.onEach { println("key: ${it.key}, value: ${it.value}") }
     println("returnedList = $returnedList")
     println("returnedMap = $returnedMap")
+
+    println(list.count { it % 2 == 0 })
+
+    println(list.max())
+    println(list.min())
+
+    println("maxBy: " + map.maxBy { it.key })
+    println("minBy: " + map.minBy { it.key })
 }

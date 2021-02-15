@@ -22,4 +22,15 @@ fun main() {
 
     println("maxBy: " + map.maxBy { it.key })
     println("minBy: " + map.minBy { it.key })
+
+    println(list.fold(4) { total, next -> total + next })
+    println(list.fold(1) { total, next -> total * next })
+
+    println(list.foldRight(4) { total, next -> total + next })
+    println(list.foldRight(1) { total, next -> total * next })
+
+    println(list.reduce { total, next -> total + next })
+    println(list.reduceRight { total, next -> total + next })
+
+    println(listPair.sumBy { it.second })
 }

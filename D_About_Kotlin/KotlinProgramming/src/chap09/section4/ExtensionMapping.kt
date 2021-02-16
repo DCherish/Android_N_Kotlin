@@ -10,4 +10,11 @@ fun main() {
     println(mapIndexed)
 
     println(listWithNull.mapNotNull { it?.times(2) })
+
+    println(list.flatMap { listOf(it, 'A') })
+    val result = listOf("abc", "12").flatMap { it.toList() }
+    println(result)
+
+    val grpMap = list.groupBy { if (it % 2 == 0) "even" else "odd" }
+    println(grpMap)
 }

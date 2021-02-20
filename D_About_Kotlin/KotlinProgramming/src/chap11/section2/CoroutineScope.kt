@@ -8,17 +8,21 @@ fun main() = runBlocking(Dispatchers.Default) {
     val threadPool = Executors.newFixedThreadPool(4)
     val MyContext = threadPool.asCoroutineDispatcher()
 
+    println("start of runBlocking")
+
     launch(Dispatchers.IO) {
         delay(1200L)
         println("Task from runBlocking")
     }
 
+    println("middle of runBlocking")
+
     coroutineScope {
         launch {
-            delay(100L)
+            delay(1500L)
             println("Task from nested launch")
         }
-        delay(200L)
+        delay(1000L)
         println("Task from coroutineScope")
     }
 

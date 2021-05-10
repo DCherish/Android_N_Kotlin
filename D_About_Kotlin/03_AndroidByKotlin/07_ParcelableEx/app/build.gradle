@@ -9,7 +9,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "org.techtown.mycustomviewex"
+        applicationId "org.techtown.parcelableex"
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1

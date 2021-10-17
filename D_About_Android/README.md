@@ -26,7 +26,8 @@
 - [Day08](https://github.com/DCherish/Android_N_Kotlin/tree/master/D_About_Android/Day08) `File`  
   - Service, BroadcastReceiver, Permission  
 - [Day09](https://github.com/DCherish/Android_N_Kotlin/tree/master/D_About_Android/Day09) `File`  
-  - NinePatch, View, Layout, RecyclerView, Spinner, TweenAnimation, PageSliding, Web  
+  - NinePatch, View, Layout, RecyclerView, Spinner, TweenAnimation  
+  - PageSliding, Web  
 - [Day10](https://github.com/DCherish/Android_N_Kotlin/tree/master/D_About_Android/Day10) `File`  
   - Seekbar, Keypad, Thread, Delayed, Looper  
 - [Day11](https://github.com/DCherish/Android_N_Kotlin/tree/master/D_About_Android/Day11) `File`  
@@ -34,12 +35,14 @@
 - [Day12](https://github.com/DCherish/Android_N_Kotlin/tree/master/D_About_Android/Day12) `File`  
   - Networking, Socket, HTTP, Request, Volley, Gson, JSON, Glide, Picasso  
 - [Day13](https://github.com/DCherish/Android_N_Kotlin/tree/master/D_About_Android/Day13) `File`  
-  - Mobile Database, SharedPreferences, SQLite, ContentProvider, ContentResolver
+  - Mobile Database, SharedPreferences, SQLite  
+  - ContentProvider, ContentResolver  
 - [Day14](https://github.com/DCherish/Android_N_Kotlin/tree/master/D_About_Android/Day14) `File`  
   - CustomView, Paint, Canvas, Bitmap, MultiTouch, CaptureIntent  
   - SurfaceView, SurfaceHolder  
 - [Day15](https://github.com/DCherish/Android_N_Kotlin/tree/master/D_About_Android/Day15) `File`  
-  - MediaPlayer(Audio, Video), MediaRecorder(Audio, Video), Youtube, Location, Map
+  - MediaPlayer(Audio, Video), MediaRecorder(Audio, Video)  
+  - Youtube, Location, Map  
 - [Day16](https://github.com/DCherish/Android_N_Kotlin/tree/master/D_About_Android/Day16) `File`  
   - AppWidget, Vibrate, NotificationManager, PushService, Sensor  
   - SystemService(ActivityManager, PackageManager, AlarmManager)  

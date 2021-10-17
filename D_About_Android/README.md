@@ -8,7 +8,7 @@
 
 ---
 
-# 💛 실습 자료
+# ✍️ 실습 자료
 - [Day01](https://github.com/DCherish/Android_N_Kotlin/tree/master/D_About_Android/Day01) `File`  
   - Hello World
 - [Day02](https://github.com/DCherish/Android_N_Kotlin/tree/master/D_About_Android/Day02) `File`  

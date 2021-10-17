@@ -20,4 +20,4 @@
 - [03_AndroidByKotlin](https://github.com/DCherish/Android_N_Kotlin/tree/master/D_About_Kotlin/03_AndroidByKotlin) `File`  
   - Android using Kotlin  
   👉 Lifecycle, RecylerView, CustomView, Parcelable, Thread, AsyncTask  
-  👉 ... will be update soon
+  👉 ... // will be update soon

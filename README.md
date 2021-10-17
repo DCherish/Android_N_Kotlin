@@ -20,5 +20,5 @@
 - [x] Java  
 
 # 💛 실습 자료
-- [D_About_Android](https://github.com/DCherish/Android_N_Kotlin/tree/master/D_About_Android) `File` `README.md`  
-- [D_About_Kotlin](https://github.com/DCherish/Android_N_Kotlin/tree/master/D_About_Kotlin) `File` `README.md`
+> [D_About_Android](https://github.com/DCherish/Android_N_Kotlin/tree/master/D_About_Android) `File` `README.md`  
+> [D_About_Kotlin](https://github.com/DCherish/Android_N_Kotlin/tree/master/D_About_Kotlin) `File` `README.md`

@@ -1,0 +1,5 @@
+include ':ch9_resource'
+include ':ch8_event'
+include ':ch6_view'
+include ':app'
+rootProject.name = "AndroidLab"
